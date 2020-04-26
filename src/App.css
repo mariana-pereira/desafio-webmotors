@@ -1,38 +1,318 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, #root {
+  min-height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  -webkit-font-smoothing: antialiased !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body, input, button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  width: 100%;
+  max-width: 933px;
+  height: 312px;
+  padding: 15px;
+}
+
+.container header img {
+  height: 29px;
+}
+
+.container header .category-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container header .category-box .left {
+  display: flex;
+  flex-direction: row;
+}
+
+.container header .category-box .left .category {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.container header .category-box .left .category div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container header .category-box .left .category div span {
+  font-weight: bold;
+  font-size: 12px;
+  color: #999;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container header .category-box .left .category svg {
+  color: #999;
+  font-size: 40px;
+  margin-right: 15px;
+  padding-top: 15px;
+}
+
+.container header .category-box .left .category.selected svg {
+  color: #bb2525;
+}
+
+.container header .category-box .left .category div strong {
+  font-size: 22px;
+  color: #999;
+}
+
+.container header .category-box .left .category.selected div strong {
+  color: #bb2525;
+}
+
+.container header .category-box button {
+  height: 46px;
+  padding: 5px 40px;
+  background: #fff;
+  color: #ffa700;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #ffa700;
+  border-radius: 3px;
+}
+
+.content {
+  padding: 0 70px;
+}
+
+.content .selection-box {
+  display: flex;
+  margin: 15px 0;
+}
+
+.content .selection-box div + div {
+  margin-left: 30px;
+}
+
+.content .selection-box div label {
+  margin-left: 5px;
+}
+
+.content .selection-box .check {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content .selection-box label {
+  color: #999;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
+
+.content form .input-box {
+  padding: 15px 0;
+}
+
+.content form .input-box input {
+  height: 46px;
+  width: 300px;
+  background: url('./assets/place-black-18dp.svg') no-repeat scroll 7px 7px;
+  border-radius: 2px;
+  border: 1px solid #999;
+  padding: 0 20px;
+  color: #333;
+  font-size: 14px;
+  padding-left: 50px;
+}
+
+.content form .input-box select {
+  height: 46px;
+  background: #fff;
+  border-radius: 2px;
+  border: 1px solid #999;
+  padding: 0 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.content form .input-box select#make {
+  width: 160px; 
+}
+
+.content form .input-box select#model {
+  width: 160px;
+}
+
+.content form .input-box select#year {
+  width: 197px;
+}
+
+.content form .input-box select#price {
+  width: 197px;
+}
+
+.content form .input-box select#version {
+  width: 335px;
+}
+
+.content form .input-box select + select {
+  margin-left: 15px;
+}
+
+.content form .search-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.content form .search-box #advanced-search {
+  background: 0;
+  border: 0;
+  color: #bb2525;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.content form .search-box #clear-filters {
+  margin: 0 20px;
+  background: 0;
+  border: 0;
+  color: #999;
+  font-size: 16px;
+} 
+
+.content form .search-box #see-offers {
+  height: 52px;
+  background: rgb(187, 37, 37);
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 80px;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .container header .category-box {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container header .category-box .left {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+  }
+  
+  .content {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .content form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    padding: 0 auto;
+  }
+  
+  .content form .input-box {
+    padding: 0;
+  }
+  
+  .content form .input-box input {
+    width: 220px;
+    margin: 15px 0;
+  }
+  
+  .content form .input-box select + select {
+    width: 300px;
+    margin: 15px 0;
+  }
+
+  .content form .input-box select#make {
+    width: 100%; 
+  }
+  
+  .content form .input-box select#model {
+    width: 100%; 
+  }
+  
+  .content form .input-box select#year {
+    width: 100%; 
+  }
+  
+  .content form .input-box select#price {
+    width: 100%; 
+  }
+  
+  .content form .input-box select#version {
+    width: 100%; 
+  }
+  
+  .content form .search-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    padding: 0 auto;
+  }
+  
+  .content form .search-box #advanced-search {
+    background: 0;
+    border: 0;
+    color: #bb2525;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+
+  .content form .search-box div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .content form .search-box #clear-filters {
+    margin: 0 20px;
+    background: 0;
+    border: 0;
+    color: #999;
+    font-size: 16px;
+    margin: 15px 0;
+  } 
+  
+  .content form .search-box #see-offers {
+    height: 52px;
+    background: rgb(187, 37, 37);
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 80px;
+    border-radius: 3px;
+    margin: 15px 0;
   }
 }
