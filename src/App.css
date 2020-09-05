@@ -72,10 +72,21 @@ body, input, button {
 .container header .category-box .left .category div strong {
   font-size: 22px;
   color: #999;
+  position: relative;
 }
 
 .container header .category-box .left .category.selected div strong {
   color: #bb2525;
+}
+
+.container header .category-box .left .category.selected div strong::after {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  content: '';
+  background-color: #bb2525;
 }
 
 .container header .category-box button {
